@@ -1,0 +1,21 @@
+//- base.jade
+doctype html
+block vars
+  - var dir = filename.replace('app/pug/files/', '').replace('.pug','')
+  - if(data[dir])
+    - var title = data[dir].title ? data[dir].title : "undifined"
+    - var keyword = data[dir].keyword ? data[dir].keyword : "undifined"
+    - var desc = data[dir].desc ? data[dir].desc : "undifined"
+
+html(lang="ja", prefix="og:http://ogp.me/ns#")
+  head
+    block title
+      title #{title}
+
+    block meta
+      include ../meta/_default
+
+  body(class=dir)
+    block content
+
+    block footer

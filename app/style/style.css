@@ -1,0 +1,35 @@
+@import "normalize.css";
+@import "_var.css";
+
+body {
+   font-family: "Roboto";
+  background-color: var(--color2);
+  color: blue;
+   @media (--v-sm) {
+     background: gray;
+   }
+}
+
+@media (--v-land2x) {
+
+}
+
+.list {
+  width: 100%;
+
+  &__item {
+    color: var(--color);
+    font-size: 24px;
+  }
+  & a {
+    color: #333;
+    &:hover {
+      color: blue;
+    }
+  }
+  & + & {
+    color: white;
+    display: flex;
+    & .foo { flex: 1; }
+  }
+}
